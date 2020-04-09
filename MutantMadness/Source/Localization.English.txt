@@ -1,0 +1,293 @@
+.,English
+quest.name,MutantMadness
+quest.description,"This is my first scenario, it is quite straightforward but I tried to make something worth an hour or so of your time. There's a couple of endings based on how much evidence you find, there is a ""clock"" that will pop if you spend too much time before reaching a certain point, but this is not a hardcore time crunch. I hope you like it! Feedback welcome."
+quest.synopsys,You came to the park to enjoy some peace and sunshine, but instead you witness unspeakable horror.
+quest.authors,CrosisDePurger
+quest.authors_short,CrosisDePurger
+Event0.button1,Continue
+Event1.button1,Continue
+Event1.text,<I> You are seated by the pond when you hear the screaming begin. You jump up with a start, but you don't immediately see what has caused this. </i>\n\nPlace your investigators as indicated, each investigator begins the game with 2 clues.
+Event2.text,<i> You are in the clear, and could look in any direction.</i>\n\nPlace Sight tokens as indicated.
+Event2.button1,Continue
+TokenNorth.text,An investigator in {c:Tile0} may choose to reveal this area.
+TokenNorth.button1,Take a look.
+TokenNorth.button2,Nevermind.
+TokenEast.button1,Take a look.
+TokenEast.button2,Nevermind.
+TokenWest.text,An investigator in {c:Tile0} may choose to reveal this area.
+EventRevealNorth2.text,<i> You see the building's back door. </i>\n\nPlace an Explore token as indicated.
+EventRevealNorth.button1,Continue
+TokenEast.text,An investigator in {c:Tile0} may choose to reveal this area.
+EventRevealNorth.text,<i> You see the back porch of the park's clubhouse. As you listen, you hear screaming coming from that direction. </i>\n\nPlace the {c:TileNorth}, remove any Sight tokens leading to {c:TileNorth}.
+TokenWest.button1,Take a look.
+TokenWest.button2,Nevermind.
+Event0.text,It was a beautiful day. You came to the park to enjoy the sunshine, but as evening approached, a commotion broke out nearby.  You heard screaming, and suddenly people in the park were panicing. In moments most had fled.
+EventRevealWest.text,<i> You see a small structure. </i>\n\nPlace the {c:TileWest} tile, remove all Sight tokens connected to {c:TileWest}.
+EventRevealWest.button1,Continue
+EventRevealWest2.text,<i> A stone path leads to the door of the building.</i>\n\nPlace an Explore token as indicated.
+EventRevealWest2.button1,Continue
+EventRevealWest3.text,<i> Someone has been working in the flowerbed, perhaps you can find a makeshift weapon? </i>\n\nPlace a Search token as indicated.
+EventRevealWest3.button1,Continue
+TokenWestSearch.text,<i> There are some tools here. </i>
+TokenWestSearch.button1,{action} Search.
+EventWestSearchAttempt.button1,Pass
+EventWestSearchAttempt.button2,Fail
+EventWestSearchAttempt.text,Test {observation} : 2
+EventWestSearchReward.text,You found a shovel!\n\nGain the Shovel common item. Remove the Search token.
+EventWestSearchReward.button1,Continue
+EventWestSearchFail.text,<i> You get your hands quite dirty. </i>
+EventWestSearchFail.button1,Continue
+TokenWestExplore.text,<i> This is a heavy, wooden door. It has a brass handle <i></i></i>\n\nYou need a brass key.
+TokenWestExplore.button1,I have the key!
+EventUnlockWestDoor.text,You do not.
+EventUnlockWestDoor.button1,Continue
+EventUnlockWestDoor2.button1,Continue
+EventUnlockWestDoor2.text,<i> You unlock the door. </i>\n\nRemove the explore token.
+EventRevealEast.text,<i>There's a shed directly in front of you. </i>\n\nPlace the {c:TileEast}. Remove this Sight token.
+EventRevealEast.button1,Continue
+EventRevealEast2.text,<i> There's a body on the ground... </i>\n\nPlace a Search token as indicated.
+EventRevealEast2.button1,Continue
+TokenSearchEast.button1,{action} Search.
+EventSearchEastAttempt.text,<i> The body is in a horrid state. You steel your nerve and try to examine it. </i>\n\nTest {will} : 1
+TokenSearchEast.text,<i>It's the body of a young man, grievous wounds are present across his chest. </i>
+EventSearchEastAttempt.button1,Pass
+EventSearchEastAttempt.button2,Fail
+EventSearchEastFail.text,<i> The more you study the body the more terrified you become. </i>\n\nTake 1 horror.
+EventSearchEastFail.button1,Continue
+EventSearchEastPass.text,<i> It's clear that he wasn't killed by any conventional weapon. You imagine large claws tore these chunks of flesh away. You find a brass key in his pocket. </i>\n\nGain 1 Clue and the Brass Key unique item. Remove this search token.\n
+EventSearchEastPass.button1,Continue
+TokenEastExplore.text,<i> The door is unlocked. </i>
+TokenEastExplore.button1,{action} Explore.
+EventEastShedReveal.text,<i> There's a man in the shed, pressed against the wall. He is startled by your entrance and raises a shotgun. </i>\n\nPlace a Person token as indicated, this is The Man.\n\nRemove the Explore token, you may move 1 space into the explored area.
+EventEastShedReveal.button1,Continue
+TokenTheMan.button1,"{action} ""Give me the gun..."" "
+TokenTheMan.button2,{action} Disarm him.
+TokenTheMan.text,"<i>The man points a shotgun at you as you approach. ""Don't come any closer!"" </i>"
+TokenTheMan.button3,"""Ok, bye!"""
+EventTheManInfluence.text,<i> You clamly talk the man down, there's no immediate danger you tell him, he could hurt someone. </i>\n\nTest {influence} : 2
+EventTheManInfluence.button1,Pass
+EventTheManInfluence.button2,Fail
+EventTheManInfluencePass.text,<i> The man relents, he hands over his weapon.</i>\n\nGain the Shotgun common item.
+EventTheManInfluencePass.button1,Continue
+EventTheManInfluenceFail.text,<i> As you speak the man swings the weapon's butt-stock at you, catching you off guard. </i>\n\nTake 1 facedown damage.
+EventTheManInfluenceFail.button1,Continue
+EventTheManForce.button1,Pass
+EventTheManForce.button2,Fail
+EventTheManForceFail.text,<i> The man pulls the trigger, you're life is saved only because you realize your mistake in time to throw yourself out of the way, slamming against the wall. </i>\n\nTake 1 facedown damage.
+EventTheManForceSuccess.text,<i> You're quick, and before the man can react you've taken his weapon. </i>\n\nGain the Shotgun common item.
+EventTheManForceSuccess.button1,Continue
+EventTheManForce.text,<i> You rush the man, attempting to take the gun. </i>\n\nTest {agility} : 2
+EventTheManForceFail.button1,Continue
+EventWestConservatoryReveal.text,<i> Plants are being grown here, the building is a conservatory. Standing amid the flowers you see a women, but something is deeply wrong with her. She turns towards you, screaming.</i>
+EventWestConservatoryReveal.button1,Continue
+Spawn0.text,<i> Her body thrashes about wildly, gruttal sounds emerging from her throat. </i>\n\nSpawn a Thrall as indicated.
+Spawn0.button1,Continue
+EventTheManDisarmed.button1,Continue
+EventAskTheMan.text,"<i> The man shakes his head. ""No, ah, I was packing to go hunting when I saw them come flooding from the house, I got one but... there are so many.... They aren't human don't you see?"" </i>\n\nGain 1 clue."
+TokenTheManDisarmed.text,<i> He is harmless now. </i>
+TokenTheManDisarmed.button1,"{action} ""Do you know what's going on?"""
+EventTheManDisarmed.text,<i> The man is disarmed. He steps back from you, muttering. </i>
+EventAskTheMan.button1,Continue
+TokenTheManDisarmed.button2,"{action} ""Where did these things come from?"""
+EventTheManWhere.text,"<i>""I saw them coming from the house to the north. I'd stay away from there if I was you. We can just hide in here..."" </i>\n\nGain 1 clue."
+EventTheManWhere.button1,Continue
+EventAskTheMan2.text,"<i> ""You already asked me that."" <i>"
+EventAskTheMan2.button1,Continue
+EventTheManWhere2.text,"<i> ""I told you what I know..."" </i>"
+EventTheManWhere2.button1,Continue
+EventDefeatThrall.button1,Continue
+EventDefeatThrall.text,<i> The thing falls over dead. On it's body you find a silver key. </i>\n\nGain the Silver Key unique item.
+EventRevealNorth2.button1,Continue
+TokenNorthExplore.text,<i> The door has an ornate silver handle. </i>\n\nYou need a silver key to enter.
+TokenNorthExplore.button1,{action} Try the door.
+EventNorthDoorNoKey.text,<i> You don't have the key and the door will not budge. <i>
+EventNorthDoorNoKey.button1,Continue
+EventNorthDoorWithKey.text,<i> Using the the silver key you unlock the door, entering a large lounge. </i>\n\nPlace the {c:TileBoss} and remove the Explore token.
+EventNorthDoorWithKey.button1,Continue
+EventBoss.text,<i> You come face to face with a horrible sight. There are bodies scattered accross the room. You spot a figure fleeing through a door accross the room. </i>\n\nPlace an Explore token as indicated.
+EventBoss.button1,Continue
+SpawnThrallFight.button1,Continue
+Event9.text,<i> You notice a pile of medical supplies on the far couch. </i>\n\nPlace a search token as indicated.
+EventEnterLouge.text,You may move 1 space into the explored area.
+TokenBossDoor.text,<i> This door goes deeper into the house. </i>
+TokenBossDoor.button1,{action} Explore.
+EventRevealNorth3.text,<i> There's a large chest on the back porch as well. </i>\n\nPlace a Search Token as indicated.
+EventRevealNorth3.button1,Continue
+TokenNorthSearch.text,<i> It's a large chest. The lock is extremely rusted. You could break it open. </i>\n\nTest {strength} to break into the chest, add 2 dice to your roll if you have a Firearm or Heavy Weapon.
+TokenNorthSearch.button1,{action} Break it!
+EventNorthChestContents.text,<i> You found something, a strange liquid. </i>\n\nGain the Mutagen Juice common item.
+EventNorthChestContents.button1,Continue
+EventRevealBossHall.text,<i> You see a hallway, it's in a state of severe disarray. Bodies line the walls.</i>\n\nPlace the {c:Tile2} Remove the Explore token.
+EventRevealBossHall.button1,Continue
+EventRevealBossHall1.text,<i> You see a tall, dark haired man the end of the hall, he is struggling with the door, which seems to be stuck. </i>\n\nPlace a Person token, this is Dr. Brown.
+EventRevealBossHall1.button1,Continue
+TokenBrown.text,"<i> ""I, I haven't got much time, I, I need the antidote!"" </i>"
+TokenBrown.button1,"{action} ""What?"""
+TokenBrown.button2,{action} Here you go.
+EventBrownGiveAntidote.text,"<i> You still have enough of that elixer for him. You provide Dr. Brown with it. He drinks it quickly. Then he looks at you concerned, ""You didn't drink any did you?""\n\nYou stare at each other for a moment. "
+EventBrownGiveAntidote.button1,Continue
+EventBrownAsk.text,"<i> ""I... I tried to improve them! It all went perfectly until now... but the latest batch, it had unforeseen side effects!"" Dr. Brown's voice begans to choke, and he tears at he clothing. ""No God! This can't be...""  </i>\n\nGain 1 clue."
+EventBrownAsk.button1,"""What's wrong with you?"""
+EventBrownNoAntidote.text,<i> You don't have anything that can help him. </i>
+EventBrownNoAntidote.button1,Continue
+TokenNorthEastSight.button1,Take a Look
+TokenNorthEastSight.button2,Nevermind.
+EventRevealNorthEast.text,<i> You see the eastern side of the clubhouse to the north, there's an entrance. </i>\n\nPlace the {c:Tile1} remove the Sight token.
+EventRevealNorthEast.button1,Continue
+EventRevealNorthEast2.text,<i> You see a door, nothing appears to be amiss. </i>\n\nPlace an Explore token as indicated.
+EventRevealNorthEast2.button1,Continue
+TokenNorthEastExplore.text,<i> It's unlocked. </i>
+TokenNorthEastExplore.button1,{action} Explore.
+EventNorthEastExplore2.text,<i> The room is cluttered, it contains what appears to be an ongoing alchemical experiment, with tubes and vases of strange liquid. There are also stacks of notes. </i>\n\nPlace a Search token as indicated. Remove the Explore Token. 
+EventNorthEastExplore2.button1,Continue
+TokenAlchemySearch.text,You can attempt to make sense of all this. \n\nTest {lore} to attempt.
+TokenAlchemySearch.button1,{action} Get to work.
+TokenAlchemySearch.button2,Fail
+EventAlchemySearchReward.button1,Continue
+EventAlchemySearchReward2.button1,Continue
+TokenNorthEastSight.text,An investigator in {c:TileEast} may activiate this Sight token.
+EventRevealNorthEast3.text,<i> You see a door that leads deeper into the house. </i>\n\nAdd an Interact token as indicated.
+EventRevealNorthEast3.button1,Continue
+Event7.text,You may move 1 space into the explored area.
+Event7.button1,Continue
+TokenStuckDoor.text,<i> The door is stuck, you cannot open it. </i>
+TokenStuckDoor.button1,Well then...
+EventRevealEast3.text,<i> There may be something of interest to the north. </i> \n\nPlace a Sight token as indicated.
+EventRevealEast3.button1,Continue
+EventBrownTransformed.text,<i> Brown's flesh warps before your eyes. His flesh twist like the other poor creatures you've already seen, but as he thrashes around the hallway, the bodies littering the hall stick to him. As you slowly back away, a monstrous amalgamation of flesh is raging before you. </i>\n\nRemove the Dr. Brown token.
+EventBrownTransformed.button1,Continue
+Spawn2.text,Spawn the Formless Spawn as indicated.
+Spawn2.button1,Continue
+EventEnd.button1,Continue
+UI1.text,<i> You just hope that none of those things escaped... </i>
+UI4.text,<i> The creature lies dead. Words can't express the horror that these poor souls suffered. Perhaps it was there own making, but still you pity them. </i>
+UI4.button1,Continue
+Event9.button1,Continue
+TokenMedical.text,<i> It's a pile of medical supplies. </i>
+TokenMedical.button1,{action} Search.
+TokenMedical.button2,No time.
+EventMedicalSupplies.button1,Pass
+EventMedicalSupplies.button2,Fail
+EventMedicalReward.text,<i> You find some sedatives. </i>\n\nGain the Sedatives common item. Remove this Search token.
+EventMedicalReward.button1,Continue
+EventMedicalSupplies.text,<i> You rummage though the supplies. </i>\n\nTest {observation} : 2
+EventBrownSaved.text,"<i> A loud crash comes from the other room.""Quick,"" Dr. Brown says, ""They are reanimating! Take this, you can use it better than I."" Dr. Brown pulls a case down from the shelf and opens it, presenting you with the contents. </i>\n\nGain the Tommy Gun and 1 clue."
+EventBrownSaved.button1,Continue
+Spawn3.text,<i> The bodies in the lounge have not only reanimated, they have merged together in a horrid abomination! </i>\n\nPlace the Formless Spawn as indicated.
+Spawn3.button1,Continue
+EventEnd.text,<i> After a harrowing fight, the thing is still. You feel disgust, but also pity for those who have suffered such a grisly fate. </i> 
+UI1.button1,Continue
+UI5.text,<i> It's all too much. You and your friends are overwhelmed, scattered. You flee blindly into the woods, listening to the screams fade in the distance. </i>
+UI5.button1,Continue
+EventEnd2.button1,Continue.
+EventEnd3.text,<i> Dr. Brown, at least, survived, and he tries to defend himself to you by saying it was what they wanted, however when you show the police the evidence you discovered they decide to speak with him... in greater depth. </i>
+EventEnd3.button1,Continue
+UI6.text,The End.
+UI6.button1,Continue
+SpawnThrallFight.text,<i> One of the bodies suddenly lurches upright. Her mutated, twisted face turns towards you. There is a foul hunger in her gaze. </i>\n\nSpawn a Thrall as indicated. 
+EventEnterLouge.button1,Continue
+EventThrallFight2.text,<i> Another body twitches and, groaning, rises to its feet. </i>
+EventThrallFight2.button1,Continue
+Spawn1.text,Spawn a Thrall as indicated.
+Spawn1.button1,Continue
+EventGenericMove.button1,Continue
+EventGenericMove.text,You may move 1 space into the explored area.
+EventEnd2.text,<i>Dr. Brown is dead, but as you suspect he was responsible for all this you feel little remorse. You do regret that with his death, no one may ever understand what just took place.\n\nBut then again, perhaps that is for the best. </i>
+Spawn4.text,<i> Just when it seems things can't get any worse, another one of the things crawls out from under the coffee table... </i>\n\nSpawn a 3rd Thrall as indicated.
+Spawn4.button1,Continue
+Event6.text,You may move 1 space into the explored area.
+Event6.button1,Continue
+EventNorthChestReward2.text,"<i> You find some photos in an envelope as well, they feature young women engaged in various sports. The envelope is titled ""Subjects."" </i>\n\nGain the Photographic Evidence  unique item and 1 clue. Remove the Search token."
+EventNorthChestReward2.button1,Continue
+EventAlchemySearchReward.text,<i> As far as you can tell someone has been trying to develop a serum to enhance the physical properties of an individual. You identify a vail as an antidote to the substance. </i>\n\nGain the Elixir unique item.
+EventGameOver.text,The End.
+EventGameOver.button1,Continue
+EventEnd4.text,<i> When the police arrive, you indicate to them that you believe Dr. Brown may have been responisble for these events, however even as you explain your suspicions you hear how difficult they would be to believe. Without adequate evidence, Dr. Brown is released.\n\nYou wonder if he will continue his work. </i>
+EventEnd4.button1,Continue
+EventAlchemySearchReward2.text,<i> You also find some notes indicating that the components are part of a dangerous experiment being conducted by a Dr. Brown. The last page catches your eye. </i>\n\nGain the Circumstantial Evidence unique item and 1 clue token.
+TokenSue.text,<i> The woman is hysterical, banging and pulling on a cellar door which appears locked from the inside. Her blue dress is stained with blood.  </i>
+TokenSue.button1,{action} Clam down ma'am.
+TokenSue.button2,{action} Slap her.
+EventSueCalm.text,<i> You do your best to try to calm the woman. </i>\n\n{action} Test {influence} :2
+EventSueCalm.button1,Pass
+EventSueCalm.button2,Fail
+EventSueCalmFail.text,"<i> Your efforts are useless, the woman screams at you, ""THEY ARE DEAD ARE YOU STUPID?"""
+EventSueCalmFail.button1,Continue
+EventSueCalmPass.text,"<i> The woman nods to you. ""What's your name?"" You ask her. ""What happened?""\n\nThe woman tries to speak though she is gasping for breath, ""I'm Sue....They changed... they all started changing... am I gonna be next?""</i>\n\nGain 1 clue."
+EventSueCalmPass.button1,Continue
+EventSueSlap.text,<i> You slap her, hoping to snap her out of it. She turns on you quickly, and throws a right hook. <i>\n\nTest </i></i>{agility} : 2
+EventSueSlap.button1,Pass
+EventSueSlap.button2,Fail
+EventSueSlapFail.text,<i> For such a small woman her fist impact against the side of your head with surprising force. </i>\n\nTake 1 facedown damage.
+EventSueSlapFail.button1,Continue
+EventSueSlapPass.button1,Continue
+TokenSueClamer.text,"<i> Sue is calmer now, but as she has calmed she has begun crying.\n\n""They're dead..."" she sobs. </i>"
+EventSueSlapPass.text,<i> You dodge her blow and back away a step as she puts up her fist, ready to strike again. </i>\n\nMove 1 space away from the woman.
+TokenSueClamer.button1,"{action} ""Can you tell me what happened?"""
+EventSueSpeaks.button1,Continue
+TokenSueCrying.text,"<i> Sue sits on the ground rocking herself back and forwards. \n\n""I didn't drink it... I didn't drink it..."" </i>"
+EventSueSpeaks.text,"<i> ""Not much... it was my first time here. It was just a meeting of the Woman's Basketball Junior League. Dr. Brown gave out some of these vials. Some girls drank them and then the girls just started... oh God... ""\n\nSue collapses onto the ground, face in hands. As she does she drops a small vail, filled with a clear green liquid. </i>\n\nGain the Enhancing Serum Common Item and 1 clue."
+TokenSueCrying.button1,Leave her be.
+TokenSeeNW.button1,Look.
+TokenSeeNW2.button1,Look
+EventRevealNorthWest.text,<i>You can see the space between the clubhouse to the north and the building attached to the conservatory. </i>\n\nPlace the {c:Tile3} remove all Sight tokens connected to {c:Tile3}.
+EventRevealNorthWest.button1,Continue
+EventRevealNorthWest2.text,<i> You see a woman screaming as she bangs on a cellar door. </i>\n\nPlace a Person token as indicated. This is Sue.
+EventRevealNorthWest2.button1,Continue
+TokenSeeNW.text,An investigator in {c:TileWest} could activate this Sight token.
+TokenSeeNW2.text,<i> You could look to the west from here. </i>\n\nAn investigator in {c:TileNorth} can activate this Sight token.
+EventSightSeeNW2.text,<i> From here you could look west. </i>\n\nPlace a Sight token as indicated.
+EventSightSeeNW2.button1,Continue
+EventCreateSeeNW.text,<i> From here you could see north. </i>\n\nPlace a Sight token as indicated.
+EventCreateSeeNW.button1,Continue
+EventSightNFromNW.text,<i> You could see East from here. </i>\n\nPlace a Sight token as indicated.
+EventSightNFromNW.button1,Continue
+TokenSeeNFromNW.text,An investigator in {c:Tile3} could activate this Sight token.
+TokenSeeNFromNW.button1,Look.
+TokenSeeWFromNW.text,An investigator in {c:Tile3} can activate this Sight token.
+TokenSeeWFromNW.button1,Continue
+EventSightWFromNW.text,<i> You could look south from here. </i>\n\nPlace a Sight token as indicated.
+EventSightWFromNW.button1,Continue
+EventWestConservatoryReveal2.text,<i>Opposite you there is a door leading into the building. </i>\n\nPlace an Explore token as indicated.
+EventWestConservatoryReveal2.button1,Continue
+TokenCellerDoor.button1,{action} Explore.
+EventEnterCellar.text,"<i> As you start to push the door open it suddenly slams back on you. A woman's voice yells from the other side,\n\n ""GO AWAY!"""
+TokenCellerDoor.text,<i>The door is ajar. </i>
+EventEnterCellar.button1,Continue
+EventEnterCellar2.text,<i> You hear voices from the other side, there are several women in there. Then you hear something heavy being pushed against the door. You call to them, but they won't respond.</i> \n\nRemove the Explore token.
+EventEnterCellar2.button1,Continue
+EventOuttaTime0.button1,OH SHIT!
+EventOuttaTime2.text,<i> The thing is massive. </i>\n\nRemove the Explore token from {c:TileNorth}.
+Spawn5.text,Spawn a Formless Spawn as indicated.
+Spawn5.button1,Continue
+EventOuttaTime.button1,Continue
+EventOuttaTime0.text,<i> You hear a loud banging coming from north of the pond, followed by a crash. A massive, grotesque thing has torn itself through the wall of the clubhouse to the north, it screams from a dozen mouths as the building collapses behind it. </i>
+EventOuttaTime.text,Place {c:TileNorth} as indicated. Remove all sight tokens connected to {c:TileNorth}
+EventOuttaTime2.button1,Continue
+EventEnd0.text,<i> The thing lays dead at your feet, your companions are shaken, and you look to each other in bewilderment. With your experience in... less usual circumstances you aren't quite as shocked as the police but you haven't got a clue what happened.\n\nAt least you're alive.</i>
+EventEnd0.button1,Continue
+EventOuttaTime5.text,<i> From the clubhouse you could see to the west. </i>\n\nPlace a Sight token as indicated.
+EventOuttaTime5.button1,Continue
+EventRevealBossHall2.text,<i> An open book on the chair seems to close of its own accord. </i>\n\nPlace a Search token as indicated.
+EventRevealBossHall2.button1,Continue
+TokenBossHallSearch.text,<i>As you examine the book, you feel the hairs on the back of your neck stand up. You open it to see alien runes which suddenly glow with a pale blue light. </i>\n\nTest {lore}: 2
+TokenBossHallSearch.button1,Pass
+TokenBossHallSearch.button2,Fail
+EventBossHallSearchFail.text,<i> Your mind is flooded with jumbled images and words you can't understand. The experiance leaves you disoriented.</i>\n\nTake 1 facedown horror.
+EventBossHallSearchFail.button1,Continue
+EventBossHallSearchPass.text,<i> You nod to the book, understanding. </i>\n\nGain the Wrack Spell. Remove this Search token.
+EventBossHallSearchPass.button1,Continue
+TokenBrownSaved.text,"<i> Dr. Brown is terrified. ""They never warned me this could happen..."" he mutters. </i>"
+TokenBrownSaved.button1,Continue
+EventRevealEast1.text,<i> The door to the shed appears unlocked. </i>\n\nPlace an Explore token as indicated.
+EventRevealEast1.button1,Continue
+EventOuttaTime01.button1,Continue
+EventOuttaTime01.text,<i> A scream echeos across the park, you sense it came from the clubhouse north of the pond. </i>
+EventAlchemySearchFail.text,<i> You haven't quite figured it out yet... </i>
+EventAlchemySearchFail.button1,Continue
+TokenNorthSearch.button2,Fail
+EventNorthSearchFail.text,<i> Whew! It's a little more study than you thought...
+EventNorthSearchFail.button1,Continue
+UI8.uitext,"<i> It reads: ""They have provided me with a new ingredient, something that will enhance everything I've been working on. I plan to have a sample ready for the girls by next week.""</i>"
+EventAlchemySearchReward3.text,"<i> It reads: ""They have provided me with a new ingredient, something that will enhance everything I've been working on. I plan to have a sample ready for the girls by next week.""</i>"
+EventAlchemySearchReward3.button1,Continue
